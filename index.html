@@ -18,21 +18,24 @@
         $(document).ready(function () {
             $('#fullpage').fullpage({
                 sectionsColor: ['#223a52', '#FFFFFF', '#FFFFFF'],
-                //anchors: ['Home', 'About', 'Work', 'Team', 'Contact'],
                 anchors: ['Home', 'About', 'Contact'],
                 menu: '#menu',
-                responsive: 0,
+                fixedElements: '.header, .footer',
+                paddingTop: '80px',
+                paddingBottom: '80px',
+                verticalCentered: true,
+                resize: false,
 
                 onLeave: function (index, nextIndex, direction) {
                     if (nextIndex == 1) {
                         $(".header").animate({
                             top: '-50px',
                             opacity: 0
-                        }, 'slow', 'jswing');
+                        }, 'slow');
                     } else if (index == 1) {
                         $(".header").animate({
                             top: '-100px'
-                        }, 'slow', 'jswing');
+                        }, 'slow');
                     }
 
                     if (index == 2) {
@@ -40,18 +43,20 @@
                             backgroundSize: '80px'
                         }, 'fast');
                     }
+                    
+                    $(".navbar-collapse").collapse('hide');
                 },
 
                 afterLoad: function (anchorLink, index) {
                     if (index == 1) {
-                        $(".header").removeClass('header-min');
+                        $(".header").removeClass('header-light');
                     } else {
-                        $(".header").addClass('header-min');
+                        $(".header").addClass('header-light');
                     }
                     $(".header").animate({
                         top: 0,
                         opacity: 1
-                    }, 'slow', 'jswing');
+                    }, 'slow');
 
                     if (index == 2) {
                         $(".about-icon").animate({
@@ -68,7 +73,7 @@
 
             $(".down").animate({
                 opacity: 1
-            }, 'slow', 'jswing');
+            }, 'slow');
         });
     </script>
 </head>
@@ -98,13 +103,9 @@
                         </li>
                     </ul>
                 </div>
-                <!--/#main-nav.navbar-collapse-->
             </nav>
-            <!--/.navbar-->
         </div>
-        <!--/.container-->
     </div>
-    <!--/.header-->
 
     <div id="fullpage">
         <div class="section section-home">
@@ -145,7 +146,7 @@
             </div>
         </div>
 
-        <!--
+<!--
     <div class="section">
         <div class="container">
         <h2>工作环境</h2>
@@ -189,47 +190,36 @@
                             <li>负责公司自运营 web 产品的后端开发工作，主要开发语言为 PHP</li>
                             <li>与产品设计师、前端工程师一起探讨、设计、实现 web 产品的新功能及改进</li>
                         </ul>
-
                         <h5>任职资格</h5>
-                        <p>
-                            <ul>
-                                <li>对计算机相关基础知识有较好理解</li>
-                                <li>至少掌握一门 web 编程语言，如 PHP、Python、Ruby 等</li>
-                                <li>熟悉 web 开发相关技术，如 web 框架、web 安全等</li>
-                                <li>掌握关系数据库及 SQL 相关知识，了解基本优化和设计原则</li>
-                                <li>良好的编码风格、沟通能力和团队合作精神，有责任感</li>
-                                <li>有很强的学习能力，有主动性和上进心</li>
-                            </ul>
-                        </p>
-
+                        <ul>
+                            <li>对计算机相关基础知识有较好理解</li>
+                            <li>至少掌握一门 web 编程语言，如 PHP、Python、Ruby 等</li>
+                            <li>熟悉 web 开发相关技术，如 web 框架、web 安全等</li>
+                            <li>掌握关系数据库及 SQL 相关知识，了解基本优化和设计原则</li>
+                            <li>良好的编码风格、沟通能力和团队合作精神，有责任感</li>
+                            <li>有很强的学习能力，有主动性和上进心</li>
+                        </ul>
                         <h5>加分项</h5>
-                        <p>
-                            <ul>
-                                <li>日常使用 *nix 系统、Vim、Emacs、Git等</li>
-                                <li>拥有GitHub账号，并熟悉Git版本控制系统</li>
-                                <li>日常无障碍使用Google Search, Gmail 等服务</li>
-                                <li>熟悉 PHP 语言，了解 CakePHP、Bootstrap 等开发框架</li>
-                                <li>有前端开发经验，了解 HTML、CSS、JavaScript</li>
-                                <li>参与设计并主导实现过大型 web 产品</li>
-                                <li>对开源技术有强烈的兴趣和爱好</li>
-                            </ul>
-                        </p>
+                        <ul>
+                            <li>日常使用 *nix 系统、Vim、Emacs、Git等</li>
+                            <li>拥有GitHub账号，并熟悉Git版本控制系统</li>
+                            <li>日常无障碍使用Google Search, Gmail 等服务</li>
+                            <li>熟悉 PHP 语言，了解 CakePHP、Bootstrap 等开发框架</li>
+                            <li>有前端开发经验，了解 HTML、CSS、JavaScript</li>
+                            <li>参与设计并主导实现过大型 web 产品</li>
+                            <li>对开源技术有强烈的兴趣和爱好</li>
+                        </ul>
                         <h5>工作体验</h5>
-                        <p>
-                            <ul>
-                                <li>我们提倡劳逸结合，坚持每周只上五天班</li>
-                                <li>坐落在新城市综合体“摩尔城”写字楼，距地铁100米，超市影院餐饮生活设施一应俱全</li>
-                                <li>免费饮料和零食供应，人体工学座椅，无烟办公环境</li>
-                                <li>全员配备苹果iMac以及人体工学座椅</li>
-                                <li>不定期组织海钓等户外活动</li>
-                            </ul>
-                        </p>
-
+                        <ul>
+                            <li>我们提倡劳逸结合，坚持每周只上五天班</li>
+                            <li>坐落在新城市综合体“摩尔城”写字楼，距地铁100米，超市影院餐饮生活设施一应俱全</li>
+                            <li>免费饮料和零食供应，人体工学座椅，无烟办公环境</li>
+                            <li>全员配备苹果iMac以及人体工学座椅</li>
+                            <li>不定期组织海钓等户外活动</li>
+                        </ul>
                         <h5>简历投递</h5>
                         <p>请将简历投递至：<a href="mailto:jobs@trident.io">jobs@trident.io</a>
                         </p>
-
-
                     </div>
                 </div>
             </div>
