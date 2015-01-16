@@ -210,7 +210,7 @@ body {
         border-bottom: 1px solid #f0f0f0;
     }
     .footer {
-        height: 30px;
+        min-height: 30px;
         line-height: 30px;
     }
     .footer .text-muted {
