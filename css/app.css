@@ -19,6 +19,7 @@ body {
     bottom: 0;
     height: 60px;
     line-height: 60px;
+    font-size: 11px;
     background-color: #284360;
 }
 
@@ -129,48 +130,6 @@ body {
 .header-light #menu li.active a {
     color: #337ab7;
 }
-
-@media (min-width: 768px) {
-    .header-light {
-        background-color: #fff;
-        border-bottom: 1px solid #f0f0f0;
-    }
-    .header .navbar-brand {
-        padding-left: 0;
-    }
-    .navbar-nav {
-        float: right;
-    }
-}
-@media (max-width: 767px) {
-    .header {
-        padding-top: 0;
-    }
-    .header .navbar-collapse {
-        border-top: 1px solid #284360;
-    }
-    .header-light .navbar-collapse {
-        border-top: 1px solid #f0f0f0;
-    }
-    #menu li {   
-        margin: 10px 0;
-    }
-    .section h1 {
-        font-size: 2em;
-    }
-    .section h2 {
-        font-size: 1.8em;
-        margin: 0 0 .6em;
-    }
-    .section p {
-        font-size: 1em;
-        margin: 0 0 .5em;
-    }
-    .section p.lead {
-        font-size: 1.2em;
-        margin: 0 0 .5em;
-    }
-}
 .modal-body .content {
     line-height: 1.8em;
     color: #666;
@@ -219,4 +178,69 @@ body {
 }
 .text-muted {
     color: #bbb;
+}
+@media (min-width: 768px) {
+    .header-light {
+        background-color: #fff;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .header .navbar-brand {
+        padding-left: 0;
+    }
+    .navbar-nav {
+        float: right;
+    }
+}
+@media (max-width: 767px) {
+    .header {
+        padding-top: 0;
+    }
+    .header .navbar-header {
+        border-bottom: 1px solid #284360;
+    }
+    .header-light .navbar-header {
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .footer {
+        height: 30px;
+    }
+    .footer .text-muted {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .footer .social {
+        display: none;
+    }
+    #menu li {   
+        margin: 10px 0;
+    }
+    .section h1 {
+        font-size: 3em;
+    }
+    .section h2 {
+        font-size: 2em;
+        margin: 0 0 .6em;
+    }
+    .section p.caption {
+        font-size: 1.1em;
+        margin: 0 0 .2em;
+    }
+    .section p.lead {
+        font-size: 1.3em;
+        margin: 0 0 .3em;
+    }
+    .about-icon {
+        height: 62.5px;
+        background-size: 40px;
+    }
+    .modal-body {
+        max-height: 320px;
+        overflow: scroll;
+    }
+    .section-home a {
+        text-decoration: none;
+    }
+    .arrow {
+        margin: 2em auto;
+    }
 }

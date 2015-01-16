@@ -15,6 +15,11 @@
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function () {
+    var isMobile = false;
+    if( $('.social').css('display')=='none') {
+        isMobile = true;
+    }
+
     $('#fullpage').fullpage({
         sectionsColor: ['#223a52', '#FFFFFF', '#FFFFFF'],
         anchors: ['Home', 'About', 'Contact'],
@@ -40,7 +45,8 @@ $(document).ready(function () {
 
             if (index == 2) {
                 $(".about-icon").animate({
-                    backgroundSize: '80px'
+                    backgroundSize: isMobile ? '40px' : '80px',
+                    opacity: 0
                 }, 'fast');
             }
 
@@ -60,7 +66,7 @@ $(document).ready(function () {
 
             if (index == 2) {
                 $(".about-icon").animate({
-                    backgroundSize: '125px',
+                    backgroundSize: isMobile ? '62.5px' : '125px',
                     opacity: 1
                 }, 'slow');
             }
@@ -78,7 +84,7 @@ function fadeBounceArrow() {
     var v = $(".arrow").css('opacity');
     $(".arrow").animate({
         opacity: v == 1 ? 0 : 1
-    }, 3000, 'swing', fadeBounceArrow);
+    }, 'slow', 'swing', fadeBounceArrow);
 }
 </script>
 </head>
@@ -115,10 +121,9 @@ function fadeBounceArrow() {
     <div id="fullpage">
         <div class="section section-home">
             <div class="container">
-                <h2>团队招募</h2>
                 <p class="lead"><span class="w">兴趣驱动</span>  <span class="w">好奇专注</span>  <span class="w">以解决问题为乐</span>
                 </p>
-                <p class="lead">如果你也是这样的 <span class="w">web 攻城狮</span>，欢迎<a href="#" data-toggle="modal" data-target="#myModal">加入我们</a>。</p>
+                <p class="caption">如果你也是这样的 web 攻城狮，欢迎<a href="#" data-toggle="modal" data-target="#myModal">加入我们</a>。</p>
                 <div class="arrow"></div>
             </div>
         </div>
@@ -168,7 +173,7 @@ function fadeBounceArrow() {
     <div class="footer">
         <div class="container">
             <p class="social pull-right"></p>
-            <p class="text-muted">&copy; All Rights Reserved</p>
+            <p class="text-muted">&copy; 2015 All Rights Reserved</p>
         </div>
     </div>
 
