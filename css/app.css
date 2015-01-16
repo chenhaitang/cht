@@ -26,9 +26,6 @@ body {
 .header-light {
     padding-top: 0;
 }
-.header .container {
-    background-color: rgba(34, 58, 82, .95);
-}
 .header-light .container {
     background-color: rgba(255, 255, 255, .95);
 }
@@ -94,6 +91,10 @@ body {
     color: #333;
     padding: 8px;
     text-align: center;
+}
+.section-home {
+    background: transparent url(../img/home.png) center center no-repeat;
+    background-size: cover;
 }
 .section-home h2,
 .section-home p.lead,
@@ -192,17 +193,22 @@ body {
     }
 }
 @media (max-width: 767px) {
-    .header {
-        padding-top: 0;
+
+    .header-light .container {
+        background-color: rgba(255, 255, 255, .95);
     }
-    .header .navbar-header {
-        border-bottom: 1px solid #284360;
+    .header .navbar-collapse {
+        border-top: 1px solid #284360;
+    }
+    .header-light .navbar-collapse {
+        border-top: 0;
     }
     .header-light .navbar-header {
         border-bottom: 1px solid #f0f0f0;
     }
     .footer {
         height: 30px;
+        line-height: 30px;
     }
     .footer .text-muted {
         margin: 0 auto;
