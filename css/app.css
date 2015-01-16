@@ -199,9 +199,12 @@ body {
     }
     .header .navbar-collapse {
         border-top: 1px solid #284360;
+        background-color: rgba(0, 0, 0, .3);
+        font-size: 1.1em;
     }
     .header-light .navbar-collapse {
         border-top: 0;
+        background-color: rgba(255, 255, 255, .5);
     }
     .header-light .navbar-header {
         border-bottom: 1px solid #f0f0f0;
