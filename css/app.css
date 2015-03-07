@@ -64,6 +64,7 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 138px auto;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/logo.png', sizingMethod='scale');
 }
 
 .header-light .navbar-brand {
