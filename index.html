@@ -18,10 +18,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function () {
-    var isMobile = false;
-    if( $('.social').css('display')=='none') {
-        isMobile = true;
-    }
+    var isMobile = $('.social').css('display')=='none';
 
     $('#fullpage').fullpage({
         sectionsColor: ['#223a52', '#FFFFFF', '#FFFFFF'],
